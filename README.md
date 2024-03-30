@@ -1,70 +1,83 @@
-# Getting Started with Create React App
+# Frontend Quillblog
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the Frontend Quillblog project!
 
-## Available Scripts
+This project is a frontend application for a blog application using Quill.js for rich text editing.
 
-In the project directory, you can run:
+## Installation
 
-### `npm start`
+To install and run the project locally, follow these steps:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Clone the repository to your local machine:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+    ```bash
+    git clone https://github.com/NTDK5/Frontend_Quillblog.git
+    ```
 
-### `npm test`
+2. Navigate to the project directory:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    ```bash
+    cd Frontend_Quillblog
+    ```
 
-### `npm run build`
+3. Install dependencies using npm:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    ```bash
+    npm install
+    ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. Set up the backend:
+    - Clone the backend repository to your local machine:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+        ```bash
+        git clone https://github.com/NTDK5/Backend_Quillblog.git
+        ```
 
-### `npm run eject`
+    - Navigate to the backend project directory:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+        ```bash
+        cd Backend_Quillblog
+        ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    - Install dependencies using npm:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+        ```bash
+        npm install
+        ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    - Start the backend server:
 
-## Learn More
+        ```bash
+        npm start
+        ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+5. Set the base URL in the frontend:
+    - Open the `src/slices/apiSlice.js` file in your code editor.
+    - Set the `baseUrl` variable to `"http://localhost:5000"` to match the URL of your backend server.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+6. Start the frontend:
+    - Navigate back to the frontend project directory if you're not already there.
+    - Start the frontend server:
 
-### Code Splitting
+        ```bash
+        npm start
+        ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Usage
 
-### Analyzing the Bundle Size
+Once the frontend server is running, you can access the application in your web browser at [http://localhost:3000](http://localhost:3000).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Contributing
 
-### Making a Progressive Web App
+Contributions are welcome! If you find any issues or would like to contribute enhancements, please feel free to open an issue or submit a pull request.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## License
 
-### Advanced Configuration
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Contact
 
-### Deployment
+If you have any questions or need further assistance, feel free to contact me:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Email: [your-email@example.com](mailto:your-email@example.com)
+- GitHub: [NTDK5](https://github.com/NTDK5)
