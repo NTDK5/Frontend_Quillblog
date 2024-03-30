@@ -33,7 +33,6 @@ const router = createBrowserRouter(
           path="/blog/:id"
           element={<DetailBlog/>}
         />
-      <Route path="" element={<PrivatesRoute />}>
         <Route path="/profile" element={<ProfileScreen />} />
       </Route>
     </Route>
