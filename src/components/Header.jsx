@@ -16,7 +16,7 @@ const Header = () => {
 
   useEffect(() => {
     if (!userInfo) {
-      navigate("/login");
+      navigate("/");
     }
   }, [userInfo, navigate]);
 
