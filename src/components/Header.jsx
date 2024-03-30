@@ -14,11 +14,6 @@ const Header = () => {
   const [logoutApiCall] = useLogoutMutation();
   const [dropdown, setDropdown] = useState(false);
 
-  useEffect(() => {
-    if (!userInfo) {
-      navigate("/");
-    }
-  }, [userInfo, navigate]);
 
   const logoutHandler = async () => {
     try {
