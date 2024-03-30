@@ -5,9 +5,10 @@ import { useLoginMutation } from "../slices/usersApiSlice";
 import { setCredentials } from "../slices/authSlice";
 import { toast } from "react-toastify";
 import { FaSignInAlt, FaEnvelope, FaLock, FaUser } from "react-icons/fa";
-
+import signInImage from '../assets/signIn.jpg';
 import logo from '../assets/logo.png';
 import { FaPerson } from "react-icons/fa6";
+
 
 
 const LoginScreen = () => {
@@ -39,7 +40,9 @@ const LoginScreen = () => {
 
   return (
     <div className="login_container">
-      <div className="sign_in_image">
+           <div className="sign_in_image">
+        <img src={signInImage} alt="signinimage" />
+        <div className="overlay"></div>
       </div>
       <div className="form_container">
         <div className="form_content">
