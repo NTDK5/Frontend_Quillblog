@@ -6,6 +6,7 @@ import { useRegisterMutation } from "../slices/usersApiSlice";
 import { setCredentials } from "../slices/authSlice";
 import { Link, useNavigate } from "react-router-dom";
 import logo from '../assets/logo.png';
+import signInImage from '../assets/signIn.jpg';
 
 
 const RegisterScreen = () => {
@@ -40,55 +41,6 @@ const RegisterScreen = () => {
     }
   };
   return (
-    // <div className="form-container">
-    //   <h2>
-    //     <FaSignOutAlt />
-    //     Sign Up
-    //   </h2>
-    //   <form onSubmit={handleSubmit}>
-    //     <div className="form_group">
-    //       <label>Name</label>
-    //       <input
-    //         type="text"
-    //         value={name}
-    //         onChange={(e) => setName(e.target.value)}
-    //         placeholder="Enter Name"
-    //         required
-    //       />
-    //     </div>
-    //     <div className="form_group">
-    //       <label>Email</label>
-    //       <input
-    //         type="email"
-    //         value={email}
-    //         onChange={(e) => setEmail(e.target.value)}
-    //         placeholder="Enter Email"
-    //         required
-    //       />
-    //     </div>
-    //     <div className="form_group">
-    //       <label>Password</label>
-    //       <input
-    //         type="password"
-    //         value={password}
-    //         placeholder="Enter Password"
-    //         onChange={(e) => setPassword(e.target.value)}
-    //         required
-    //       />
-    //     </div>
-    //     <div className="form_group">
-    //       <label>Confirm Password</label>
-    //       <input
-    //         type="password"
-    //         value={confirmpassword}
-    //         placeholder="Confirm Password"
-    //         onChange={(e) => setConfirmPassword(e.target.value)}
-    //         required
-    //       />
-    //     </div>
-    //     <button type="submit">Sign Up</button>
-    //   </form>
-    // </div>
         <div className="login_container">
         <div className="form_container">
           <div className="form_content">
@@ -141,8 +93,10 @@ const RegisterScreen = () => {
         </form>
           </div>
         </div>
-        <div className="sign_in_image">
-        </div>
+              <div className="sign_in_image">
+        <img src={signInImage} alt="signinimage" />
+        <div className="overlay"></div>
+      </div>
   
       </div>
   );
