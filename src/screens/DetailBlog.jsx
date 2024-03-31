@@ -33,7 +33,7 @@ const token = userInfo?.token;
   }, [blogs]);
 
   useEffect(() => {
-    if (userInfo?._id === blogs?.user) {
+    if (userInfo && userInfo._id === blogs?.user) {
         setAuthor(true); // Log author inside useEffect
     }
  // Log author inside useEffect
