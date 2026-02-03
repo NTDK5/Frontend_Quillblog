@@ -1,14 +1,14 @@
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from "react-redux";
 import Header from "../components/Header";
-import { deleteBlog, loadBlog } from "../slices/blogSlice";
-import { useGetBlogByIdQuery } from "../slices/blogsApiSlice";
+import { deleteBlog } from "../slices/blogSlice";
+import { useGetBlogByIdQuery, useDeleteBlogMutation } from "../slices/blogsApiSlice";
 import { useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom"; 
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
-import { useDeleteBlogMutation } from '../slices/blogsApiSlice';
 
 const DetailBlog = () => {
-  const { blogDetail } = useSelector((state) => state.blog);
+const { blogDetail: _blogDetail } = useSelector((state) => state.blog);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { userInfo } = useSelector((state) => state.auth);
@@ -16,13 +16,13 @@ const DetailBlog = () => {
   const {id} = useParams();
 const token = userInfo?.token;
 
-  const { 
-      data:blogs,
-      isLoading, 
-      isError,
-      error, 
-      refetch 
-  } = useGetBlogByIdQuery(id );
+  const {
+  data: blogs,
+  isLoading,
+  isError,
+  error,
+} = useGetBlogByIdQuery(id);
+
 
   const [deleteBlogApi] = useDeleteBlogMutation();
 
@@ -32,12 +32,13 @@ const token = userInfo?.token;
     }
   }, [blogs]);
 
-  useEffect(() => {
-    if (userInfo && userInfo._id === blogs?.user) {
-        setAuthor(true); // Log author inside useEffect
-    }
- // Log author inside useEffect
-}, [blogs, userInfo, author]); 
+ useEffect(() => {
+  if (userInfo && userInfo._id === blogs?.user) {
+    setAuthor(true);
+  } else {
+    setAuthor(false);
+  }
+}, [blogs, userInfo]);
 
   const handleDelete = async (blogId) => {
     try {
