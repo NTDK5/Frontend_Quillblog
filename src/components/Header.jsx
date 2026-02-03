@@ -1,10 +1,10 @@
 import { FaSignInAlt, FaUser, FaCog, FaSignOutAlt } from "react-icons/fa";
-import { f } from "react-icons/fa6";
+
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useLogoutMutation } from "../slices/usersApiSlice";
 import { logout } from "../slices/authSlice";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import logo from '../assets/logo.png';
 
 const Header = () => {
@@ -28,7 +28,7 @@ const Header = () => {
     <nav>
       <div className="nav">
         <Link to={'/'} className="logo">
-          <img src={logo} width={40} height={40}></img>
+          <img src={logo} alt="image" width={40} height={40}></img>
           <h6>Quill<span>Blog</span></h6>
         </Link>
         <div className="nav_link">
