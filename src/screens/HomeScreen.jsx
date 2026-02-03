@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { useSelector, useDispatch, } from "react-redux";
 import { loadBlog } from "../slices/blogSlice";
 import { Link } from "react-router-dom";
-import {toast} from 'react-toastify';
 import BlogCard from "../components/BlogCard";
 import Header from "../components/Header";
 import Loading from '../components/Loading'
