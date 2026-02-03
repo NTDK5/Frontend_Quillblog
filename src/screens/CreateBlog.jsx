@@ -1,11 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { toast } from "react-toastify";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { createBlog } from "../slices/blogSlice"; 
 import { useCreateBlogMutation } from "../slices/blogsApiSlice";
 import Header from "../components/Header";
-import axios from 'axios';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/storage';
 import ReactQuill from 'react-quill';
@@ -13,20 +12,20 @@ import 'react-quill/dist/quill.snow.css';
 import Loading from "../components/Loading";
 
 const CreateBlogScreen = () => {
-  const [isLoadings, setLoadings] = useState(false);
+  const [_isLoadings, setLoadings] = useState(false);
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [category, setCategory] = useState("");
   const [tags, setTags] = useState("");
   const [image, setImage] = useState(""); 
-  const [imageUrl, setImageUrl] = useState(null);
+  const [_imageUrl, setImageUrl] = useState(null);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { userInfo } = useSelector((state) => state.auth);
   const token = userInfo?.token;
 
 
-  const [create, {isLoading, isError, error  }] = useCreateBlogMutation();
+  const [create, {_isLoading, isError, error  }] = useCreateBlogMutation();
 
 
   const handleSubmit = async (e) => {
@@ -43,7 +42,7 @@ const CreateBlogScreen = () => {
 
         setImageUrl(downloadURL);
         try {
-          const res = await create({ title, body, category, tags, token, imageUrl: downloadURL }).unwrap();
+          const res = await create({ title, body, category, tags, token, _imageUrl: downloadURL }).unwrap();
           dispatch(createBlog({ ...res }));
           toast.success('Blog Created successfully')
           navigate("/");
